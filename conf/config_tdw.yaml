@@ -1,0 +1,30 @@
+name: tdw
+
+defaults:
+  - _self_
+  - hydra: default.yaml
+  - planner: tdw.yaml
+  # - override hydra/job_logging: colorlog
+  # - override hydra/hydra_logging: colorlog
+
+out_dir: ${hydra:run.dir}
+
+result_path: ./result/tdw
+log_path: ./logs/tdw/run_evaluation_tdw_default.log
+
+debug: True
+experiment_name: single_test
+run_id: run_0
+data_path: test_env.json
+data_prefix: dataset/tdw/dataset_test/  # dataset/tdw/dataset_train/  dataset/tdw/dataset_test/
+port: 1071  # TDW server port
+agents: 
+  - h_agent
+  # - h_agent
+eval_episodes:
+  - -1
+max_frames: 2000
+launch_build: False  # For headless mode, set False
+gt_mask: True  # Set True to use ground truth mask, otherwise use vision detection model
+save_img: False
+screen_size: 512

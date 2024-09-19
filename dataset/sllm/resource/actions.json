@@ -1,0 +1,15 @@
+[
+    "GoToObject",
+    "PickUpObject",
+    "PutObject",
+    "OpenObject",
+    "CloseObject",
+    "ToggleOnObject",
+    "ToggleOffObject",
+    "BreakObject",
+    "SliceObject",
+    "CleanObject",
+    "DirtyObject",
+    "FillObjectWithLiquid",
+    "EmptyLiquidFromObject"
+]

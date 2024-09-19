@@ -1,0 +1,6 @@
+config_name: "chat"
+model_name: "OpenAI/gpt-3.5-turbo"
+use_pddl: False
+random_seed: 0
+use_predefined_prompt: False
+plan_whole: True

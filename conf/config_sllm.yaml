@@ -1,0 +1,16 @@
+name: sllm
+
+defaults:
+  - _self_
+  - hydra: default.yaml
+  - planner: sllm.yaml
+  # - override hydra/job_logging: colorlog
+  # - override hydra/hydra_logging: colorlog
+
+out_dir: ${hydra:run.dir}
+
+result_path: ./result/sllm
+max_action_num: 50
+num_tasks: 100
+start_from: 0
+task_category: comprehensive  # omnipotent, capacity_limited, skills_limited, skills_limited_disruptive, comprehensive

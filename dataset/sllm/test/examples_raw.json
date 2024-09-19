@@ -1,0 +1,122 @@
+[
+    {
+        "floorplan": 9,
+        "level": "easy",
+        "task": "Fill a pot with water and place it on the stove burner.",
+        "robot_description": [
+            {
+                "skills": ["FillObjectWithLiquid", "EmptyLiquidFromObject"],
+                "capacity_num": 1,
+                "capacity_mass": 100.0
+            },
+            {
+                "skills": ["ToggleOnObject", "ToggleOffObject"],
+                "capacity_num": 1,
+                "capacity_mass": 0.01
+            }
+        ],
+        "label": [],
+        "object_states": [],
+        "solution": [
+            "GoToObject(robots[0],'Pot')",
+            "PickUpObject(robots[0],'Pot')",
+            "GoToObject(robots[0],'Faucet')",
+            "GoToObject(robots[1],'Faucet')",
+            "ToggleOnObject(robots[1],'Faucet')",
+            "FillObjectWithLiquid(robots[0],'Pot','water')",
+            "ToggleOffObject(robots[1],'Faucet')",
+            "GoToObject(robots[0],'StoveBurner')",
+            "PutObject(robots[0],'Pot','StoveBurner')"
+        ]
+    },
+    {
+        "floorplan": 9,
+        "level": "moderate",
+        "task": "Chill the bread, freeze it, then put it on the counter.",
+        "robot_description": [
+            {
+                "skills": [],
+                "capacity_num": 1,
+                "capacity_mass": 1.0
+            },
+            {
+                "skills": ["ToggleOnObject", "ToggleOffObject", "SliceObject", "CleanObject", "DirtyObject"],
+                "capacity_num": 1,
+                "capacity_mass": 1.0
+            },
+            {
+                "skills": ["OpenObject", "CloseObject"],
+                "capacity_num": 1,
+                "capacity_mass": 0.01
+            }
+        ],
+        "label": [],
+        "object_states": [],
+        "solution": [
+            "GoToObject(robots[1],'Bread')",
+            "PickUpObject(robots[1],'Bread')",
+            "GoToObject(robots[1],'Fridge')",
+            "GoToObject(robots[2],'Fridge')",
+            "OpenObject(robots[2],'Fridge')",
+            "PutObject(robots[1],'Bread','Fridge')",
+            "CloseObject(robots[2],'Fridge')",
+            "OpenObject(robots[2],'Fridge')",
+            "GoToObject(robots[0],'Bread')",
+            "PickUpObject(robots[0],'Bread')",
+            "CloseObject(robots[2],'Fridge')",
+            "GoToObject(robots[0],'Countertop')",
+            "PutObject(robots[0],'Bread','CounterTop')"
+        ]
+    },
+    {
+        "floorplan": 9,
+        "level": "easy",
+        "task": "Fill a pot with water and place it on the stove burner.",
+        "robot_description": [
+            {
+                "skills": ["OpenObject", "CloseObject", "ToggleOnObject", "ToggleOffObject", "BreakObject", "SliceObject", "CleanObject", "DirtyObject", "FillObjectWithLiquid", "EmptyLiquidFromObject"],
+                "capacity_num": 1,
+                "capacity_mass": 1.0
+            }
+        ],
+        "label": [],
+        "object_states": [],
+        "solution": [
+            "GoToObject(robots[0],'Pot')",
+            "PickUpObject(robots[0],'Pot')",
+            "GoToObject(robots[0],'Faucet')",
+            "ToggleOnObject(robots[0],'Faucet')",
+            "FillObjectWithLiquid(robots[0],'Pot','water')",
+            "ToggleOffObject(robots[0],'Faucet')",
+            "GoToObject(robots[0],'StoveBurner')",
+            "PutObject(robots[0],'Pot','StoveBurner')"
+        ]
+    },
+    {
+        "floorplan": 9,
+        "level": "moderate",
+        "task": "Chill the bread, freeze it, then put it on the counter.",
+        "robot_description": [
+            {
+                "skills": ["OpenObject", "CloseObject", "ToggleOnObject", "ToggleOffObject", "BreakObject", "SliceObject", "CleanObject", "DirtyObject", "FillObjectWithLiquid", "EmptyLiquidFromObject"],
+                "capacity_num": 1,
+                "capacity_mass": 1.0
+            }
+        ],
+        "label": [],
+        "object_states": [],
+        "solution": [
+            "GoToObject(robots[0],'Bread')",
+            "PickUpObject(robots[0],'Bread')",
+            "GoToObject(robots[0],'Fridge')",
+            "OpenObject(robots[0],'Fridge')",
+            "PutObject(robots[0],'Bread','Fridge')",
+            "CloseObject(robots[0],'Fridge')",
+            "OpenObject(robots[0],'Fridge')",
+            "PickUpObject(robots[0],'Bread')",
+            "CloseObject(robots[0],'Fridge')",
+            "GoToObject(robots[0],'Countertop')",
+            "PutObject(robots[0],'Bread','CounterTop')"
+        ]
+    }
+]

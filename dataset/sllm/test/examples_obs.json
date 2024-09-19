@@ -1,0 +1,272 @@
+[
+    {
+        "floorplan": 9,
+        "level": "easy",
+        "task": "Fill a pot with water and place it on the stove burner.",
+        "robot_description": [
+            {
+                "skills": [
+                    "FillObjectWithLiquid",
+                    "EmptyLiquidFromObject"
+                ],
+                "capacity_num": 1,
+                "capacity_mass": 100.0
+            },
+            {
+                "skills": [
+                    "ToggleOnObject",
+                    "ToggleOffObject"
+                ],
+                "capacity_num": 1,
+                "capacity_mass": 0.01
+            }
+        ],
+        "label": [],
+        "object_states": [],
+        "solution": [
+            "GoToObject(robots[0],'Pot')",
+            "PickUpObject(robots[0],'Pot')",
+            "GoToObject(robots[0],'Faucet')",
+            "GoToObject(robots[1],'Faucet')",
+            "ToggleOnObject(robots[1],'Faucet')",
+            "FillObjectWithLiquid(robots[0],'Pot','water')",
+            "ToggleOffObject(robots[1],'Faucet')",
+            "GoToObject(robots[0],'StoveBurner')",
+            "PutObject(robots[0],'Pot','StoveBurner')"
+        ],
+        "robot_list": [
+            "Barney_N1M100000",
+            "Bailey_N1M10"
+        ],
+        "obs_list": [
+            "Robot0 has moved to Pot successfullly.",
+            "Robot0 has picked up Pot successfullly.",
+            "Robot0 has moved to Faucet successfullly.",
+            "Robot1 has moved to Faucet successfullly.",
+            "Robot1 has toggled on Faucet successfullly.",
+            "Robot0 has filled Pot with water successfullly.",
+            "Robot1 has toggled off Faucet successfullly.",
+            "Robot0 has moved to StoveBurner successfullly.",
+            "Robot0 has put Pot into StoveBurner successfullly."
+        ],
+        "reasoning_list": [
+            "The first step is to approach the pot to begin the task. The next step will involve picking up the pot using Robot0.",
+            "Robot0 is now positioned at the pot ready to pick it up. The next step will involve Robot0 picking up the pot.",
+            "Robot0 has successfully picked up the pot and needs to move to the faucet to fill it with water. The next step will be moving Robot0 to the faucet.",
+            "Robot0 has reached the faucet while holding the pot. The next step will involve moving Robot1 to the faucet to help turn it on.",
+            "Robot1 is at the faucet and ready to turn it on. The next step will involve using Robot1 to toggle on the faucet.",
+            "The faucet is now on and ready to dispense water. The next step will involve Robot0 filling the pot with water from the faucet.",
+            "Robot0 has successfully filled the pot with water. The next step will involve Robot1 toggling off the faucet to conserve water.",
+            "The faucet is now turned off, and the pot is filled with water. The next step will involve Robot0 moving to the stove burner.",
+            "Robot0 has reached the stove burner with the pot filled with water. The final step will be Robot0 placing the pot on the stove burner."
+        ]
+    },
+    {
+        "floorplan": 9,
+        "level": "moderate",
+        "task": "Chill the bread, freeze it, then put it on the counter.",
+        "robot_description": [
+            {
+                "skills": [],
+                "capacity_num": 1,
+                "capacity_mass": 1.0
+            },
+            {
+                "skills": [
+                    "ToggleOnObject",
+                    "ToggleOffObject",
+                    "SliceObject",
+                    "CleanObject",
+                    "DirtyObject"
+                ],
+                "capacity_num": 1,
+                "capacity_mass": 1.0
+            },
+            {
+                "skills": [
+                    "OpenObject",
+                    "CloseObject"
+                ],
+                "capacity_num": 1,
+                "capacity_mass": 0.01
+            }
+        ],
+        "label": [],
+        "object_states": [],
+        "solution": [
+            "GoToObject(robots[1],'Bread')",
+            "PickUpObject(robots[1],'Bread')",
+            "GoToObject(robots[1],'Fridge')",
+            "GoToObject(robots[2],'Fridge')",
+            "OpenObject(robots[2],'Fridge')",
+            "PutObject(robots[1],'Bread','Fridge')",
+            "CloseObject(robots[2],'Fridge')",
+            "OpenObject(robots[2],'Fridge')",
+            "GoToObject(robots[0],'Bread')",
+            "PickUpObject(robots[0],'Bread')",
+            "CloseObject(robots[2],'Fridge')",
+            "GoToObject(robots[0],'Countertop')",
+            "PutObject(robots[0],'Bread','CounterTop')"
+        ],
+        "robot_list": [
+            "Aaron_N1M1000",
+            "Eileen_N1M1000",
+            "Babette_N1M10"
+        ],
+        "obs_list": [
+            "Robot1 has moved to Bread successfullly.",
+            "Robot1 has picked up Bread successfullly.",
+            "Robot1 has moved to Fridge successfullly.",
+            "Robot2 has moved to Fridge successfullly.",
+            "Robot2 has opened Fridge successfullly.",
+            "Robot1 has put Bread into Fridge successfullly.",
+            "Robot2 has closed Fridge successfullly.",
+            "Robot2 has opened Fridge successfullly.",
+            "Robot0 has moved to Bread successfullly.",
+            "Robot0 has picked up Bread successfullly.",
+            "Robot2 has closed Fridge successfullly.",
+            "Robot0 has moved to Countertop successfullly.",
+            "Robot0 has put Bread into CounterTop successfullly."
+        ],
+        "reasoning_list": [
+            "The goal is to chill, freeze, and then place the bread on the counter. Robot1 will move towards the bread as the initial step.",
+            "Robot1 has successfully moved to the bread. Next, Robot1 needs to pick up the bread.",
+            "Robot1 has the bread. Now, Robot1 will move towards the fridge to place the bread inside.",
+            "Robot1 is at the fridge with the bread. Robot2 will now move towards the fridge to open it.",
+            "Robot2 is at the fridge and ready to assist. Robot2 will now open the fridge for Robot1 to place the bread inside.",
+            "The fridge is open and ready for the bread. Robot1 will now place the bread inside the fridge to chill it.",
+            "The bread is now chilling inside the fridge. Robot2 will close the fridge to proceed further.",
+            "The bread has chilled. Robot2 will reopen the fridge, preparing for the next step of freezing the bread.",
+            "The fridge is open and bread is chilled. Robot0 will now move to get the chilled bread from the fridge.",
+            "Robot0 is at the chilled bread. Robot0 will pick up the bread to continue the process by freezing it.",
+            "Robot0 has picked up the chilled bread. Now, Robot2 will close the fridge to complete the chilling and freezing stage.",
+            "The chilled bread has been picked up and fridge is closed. Robot0 will now move towards the countertop.",
+            "Robot0 is at the countertop with the bread. Finally, Robot0 will place the bread on the countertop to complete the task."
+        ]
+    },
+    {
+        "floorplan": 9,
+        "level": "easy",
+        "task": "Fill a pot with water and place it on the stove burner.",
+        "robot_description": [
+            {
+                "skills": [
+                    "OpenObject",
+                    "CloseObject",
+                    "ToggleOnObject",
+                    "ToggleOffObject",
+                    "BreakObject",
+                    "SliceObject",
+                    "CleanObject",
+                    "DirtyObject",
+                    "FillObjectWithLiquid",
+                    "EmptyLiquidFromObject"
+                ],
+                "capacity_num": 1,
+                "capacity_mass": 1.0
+            }
+        ],
+        "label": [],
+        "object_states": [],
+        "solution": [
+            "GoToObject(robots[0],'Pot')",
+            "PickUpObject(robots[0],'Pot')",
+            "GoToObject(robots[0],'Faucet')",
+            "ToggleOnObject(robots[0],'Faucet')",
+            "FillObjectWithLiquid(robots[0],'Pot','water')",
+            "ToggleOffObject(robots[0],'Faucet')",
+            "GoToObject(robots[0],'StoveBurner')",
+            "PutObject(robots[0],'Pot','StoveBurner')"
+        ],
+        "robot_list": [
+            "Habib_N1M1000"
+        ],
+        "obs_list": [
+            "Robot0 has moved to Pot successfullly.",
+            "Robot0 has picked up Pot successfullly.",
+            "Robot0 has moved to Faucet successfullly.",
+            "Robot0 has toggled on Faucet successfullly.",
+            "Robot0 has filled Pot with water successfullly.",
+            "Robot0 has toggled off Faucet successfullly.",
+            "Robot0 has moved to StoveBurner successfullly.",
+            "Robot0 has put Pot into StoveBurner successfullly."
+        ],
+        "reasoning_list": [
+            "The task has just begun. We need to first locate the pot to proceed with filling it with water.",
+            "The robot has successfully reached the pot. Next, we need to pick up the pot so we can bring it to the faucet.",
+            "The robot has picked up the pot successfully. Now, we need to go to the faucet to fill the pot with water.",
+            "The robot is now at the faucet with the pot. The next step is to turn on the faucet to allow water to flow into the pot.",
+            "The faucet is now on, and water is flowing. The robot should now fill the pot with water from the faucet.",
+            "The pot is filled with water successfully. The next step is to turn off the faucet to stop the water flow.",
+            "The faucet is turned off, and the pot is filled with water. Now, we need to bring the pot to the stove burner.",
+            "The robot is at the stove burner with the pot filled with water. The final step is to place the pot on the stove burner."
+        ]
+    },
+    {
+        "floorplan": 9,
+        "level": "moderate",
+        "task": "Chill the bread, freeze it, then put it on the counter.",
+        "robot_description": [
+            {
+                "skills": [
+                    "OpenObject",
+                    "CloseObject",
+                    "ToggleOnObject",
+                    "ToggleOffObject",
+                    "BreakObject",
+                    "SliceObject",
+                    "CleanObject",
+                    "DirtyObject",
+                    "FillObjectWithLiquid",
+                    "EmptyLiquidFromObject"
+                ],
+                "capacity_num": 1,
+                "capacity_mass": 1.0
+            }
+        ],
+        "label": [],
+        "object_states": [],
+        "solution": [
+            "GoToObject(robots[0],'Bread')",
+            "PickUpObject(robots[0],'Bread')",
+            "GoToObject(robots[0],'Fridge')",
+            "OpenObject(robots[0],'Fridge')",
+            "PutObject(robots[0],'Bread','Fridge')",
+            "CloseObject(robots[0],'Fridge')",
+            "OpenObject(robots[0],'Fridge')",
+            "PickUpObject(robots[0],'Bread')",
+            "CloseObject(robots[0],'Fridge')",
+            "GoToObject(robots[0],'Countertop')",
+            "PutObject(robots[0],'Bread','CounterTop')"
+        ],
+        "robot_list": [
+            "Habib_N1M1000"
+        ],
+        "obs_list": [
+            "Robot0 has moved to Bread successfullly.",
+            "Robot0 has picked up Bread successfullly.",
+            "Robot0 has moved to Fridge successfullly.",
+            "Robot0 has opened Fridge successfullly.",
+            "Robot0 has put Bread into Fridge successfullly.",
+            "Robot0 has closed Fridge successfullly.",
+            "Robot0 has opened Fridge successfullly.",
+            "Robot0 has picked up Bread successfullly.",
+            "Robot0 has closed Fridge successfullly.",
+            "Robot0 has moved to Countertop successfullly.",
+            "Robot0 has put Bread into CounterTop successfullly."
+        ],
+        "reasoning_list": [
+            "The robot needs to reach the bread to start the process. The next step involves the robot moving to the location of the bread.",
+            "The robot has reached the bread. The next step is for the robot to pick up the bread.",
+            "The robot has picked up the bread. The next step is for the robot to move to the fridge.",
+            "The robot has reached the fridge. The next step is for the robot to open the fridge.",
+            "The fridge is now open. The next step is for the robot to place the bread inside the fridge.",
+            "The bread has been placed into the fridge. The next step is to close the fridge.",
+            "The fridge has been closed to allow the bread to chill. Next, the fridge needs to be opened again to retrieve the chilled bread.",
+            "The fridge is open and the bread is chilled. The next step is for the robot to pick up the chilled bread.",
+            "The robot has picked up the chilled bread. The next step is to close the fridge.",
+            "The fridge has been closed after retrieving the chilled bread. The next step is for the robot to move to the countertop.",
+            "The robot has reached the countertop. The final step is to place the chilled bread on the countertop."
+        ]
+    }
+]

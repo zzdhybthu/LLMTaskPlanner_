@@ -1,0 +1,16 @@
+config_name: "sllm"
+model_name: "google/gemma-1.1-7b-it"
+openai_base_url: 'https://api.ohmygpt.com/v1/'
+use_feedback: True
+# use_detailed_prompt: False
+port: 8001
+prompt_method: "moa"  # naive, cot, moa
+prompt_detail: "partial"  # full, partial
+algo: "baseline"
+use_score: True
+reference_models:
+  - "meta-llama/Meta-Llama-3-8B-Instruct"
+reference_ports:
+  - 8000
+random_seed: 0
+max_tokens: 1024
