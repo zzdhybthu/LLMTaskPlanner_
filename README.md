@@ -2,6 +2,8 @@
 
 **A lightweight framework for evaluating the planning capabilities of Large Language Models (LLMs).** LLMTaskPlanner provides an efficient environment for testing complex reasoning, multi-agent collaboration, and task execution. With support for diverse actions, environments, and capability settings, it offers comprehensive feedback and multiple difficulty levels. Designed for easy setup and extensibility, LLMTaskPlanner is ideal for researchers and developers seeking to benchmark LLMs efficiently and effectively.
 
+项目 G 了，留给有需要的人🤗
+
 ## Directory Structure
 ```text
 .
